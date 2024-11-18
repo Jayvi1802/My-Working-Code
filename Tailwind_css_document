@@ -1,0 +1,65 @@
+Tailwind Css :
+
+- It is css framework made up of utility classes.
+
+
+Install Tailwind Css Process :
+
+- node -v :for node js version/node js install or not
+  cd documenets  : create project folder.
+  cd tuts : tuts : project folder name.
+  mkdir ninjafood
+  cd ninjafood
+  code.
+
+
+Open Terminal folder : New Terminal 
+- npm init -y : Enter after package.json show.
+- npm install tailwindcss : Install tailwindcss
+- npx tailwindcss init --full : for create tailwind.config.js
+
+
+- npx tailwindcss -i ./src/input.css -o ./src/output.css --watch  : Build your css 
+
+- npm install -D @tailwindcss/forms 
+
+- npm run dev -ddd
+
+Install Extension : 
+
+1. Tailwind CSS IntelliSense
+2. PostCSS Language Support
+3. Live Server
+
+
+
+Shortcode Visual code : 
+
+1. a*4>img
+
+
+Padding Code :
+
+1. px-0 : padding-left:0 , padding-right:0  .. x means : left,right
+2. py-0 : padding-top:0 ,  padding-bottom:0 .. y means : top,bottom
+3. p-px	padding: 1px;
+
+
+Margin Code :
+
+1. mx-0 : margin-left:0 , margin-right:0  .. x means : left,right
+2. my-0 : margin-top:0 ,  margin-bottom:0 .. y means : top,bottom
+3. m-px	margin: 1px;
+4. mx-px	margin-left: 1px;
+			margin-right: 1px;
+5. my-px	margin-top: 1px;
+			margin-bottom: 1px;
+
+
+Width code for desktop and extra large screen :
+
+1. lg:w-2/3 xl:w-2/3
+
+
+
+

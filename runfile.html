@@ -1,0 +1,508 @@
+For Create Style :
+$ ssh a409940b_1@d3ca7104b0.nxcli.net
+Password: 
+[a409940b@cloudhost-714165 ~]
+$ pwd
+$ cd d3ca7104b0.nxcli.net/html/
+[a409940b@cloudhost-714165 html]$ php bin/magento s:s:d -f
+
+Flushed cache types:
+[a409940b@cloudhost-714165 html]$ php bin/magento c:f
+
+For Webroot :
+live_crowdfund@Crowdfund:/var/www/vhosts/www.crowdfund.mu$ cd webroot
+live_crowdfund@Crowdfund:/var/www/vhosts/www.crowdfund.mu/webroot$ php bin/magento s:s:d -f
+live_crowdfund@Crowdfund:/var/www/vhosts/www.crowdfund.mu/webroot$ php bin/magento c:f
+
+
+
+SSH Connect : 
+
+Live : ssh -i /home/jaydip/Desktop/zig.pem /ubuntu@3.22.101.68
+Staging : ssh -i zig.pem /ubuntu@18.221.81.42
+
+
+cd /var/www/html
+php bin/magento c:f
+
+php bin/magento s:s:d -f
+
+
+php bin/magento s:u && php bin/magento s:d:c && php bin/magento s:s:d -f
+
+
+[master_yadenmyjfb]:public_html$ php bin/magento s:up
+[master_yadenmyjfb]:public_html$ php bin/magento s:d:c
+[master_yadenmyjfb]:public_html$ php bin/magento i:re
+[master_yadenmyjfb]:public_html$ php bin/magento i:rei
+[master_yadenmyjfb]:public_html$ php bin/magento s:s:d -f
+[master_yadenmyjfb]:public_html$ php bin/magento c:f
+
+
+
+[a826b221@cloudhost-1913337 ~]$ cd fa3df461b1.nxcli.net/html/
+[a826b221@cloudhost-1913337 html]$ php bin/magento s:s:d -f en_US en_GB it_IT
+[a826b221@cloudhost-1913337 html]$ php bin/magento c:f
+
+
+
+
+$count = 1;
+<?php if($count % 2 == 1){ ?>
+<?php } else { ?>
+<?php } $count++; ?>
+
+
+
+
+: Odd and even 
+
+<?php
+   $count = 1;
+   $class = "";
+   if( have_rows('product_information') ):
+   while( have_rows('product_information') ) : the_row();
+?>
+<?php 
+    if($count % 2 == 0) {
+       $class = 'productright'; 
+   } else {
+       $class = 'productleft';
+   }
+?>
+<?php 
+  $count++;
+  endwhile;
+  endif;
+?> 
+
+<?php if($count % 2 == 0) {
+
+  $class = 'gold_dataright';
+
+} else {
+    
+    $class = 'gold_dataleft'; 
+}
+
+?>
+
+
+
+<script type="text/javascript">
+    require(['jquery', 'jquery/ui'], function($) { 
+        $('body').click(function() {
+            $(".mobile_sidebar").css('display','none');
+            $(".bars_overlay").hide();
+        });
+
+        $('.mobile_sidebar').click(function(e) {
+            e.stopPropagation();
+        });
+
+        $('#product-listing-filter-toggle').click(function(e) {
+            $(".mobile_sidebar").show();
+            $(".mobile_sidebar").css('display','block');
+            $(".bars_overlay").show();
+            e.stopPropagation();
+        });
+    });
+</script>
+<script type="text/javascript">
+    require(['jquery', 'jquery/ui'], function($) {
+        jQuery(document).ready(function() {
+
+            jQuery(".link").click(function() {
+               jQuery('html, body').animate({
+                scrollTop: jQuery("#fitment_jump").offset().top
+            }, 1000);
+           });
+
+            jQuery('.edit-btn').live('click', function(event) {        
+               jQuery('#product-options-wrapper').toggle('show');
+               jQuery('#product-options-wrapper').css('display','block');
+           });
+            jQuery(".btn-close").click(function() {
+                jQuery(".product-options-wrapper").hide();
+            });
+            jQuery('.product-options-wrapper > .fieldset > .field').hide();
+            jQuery('.product-options-wrapper > .fieldset > .field').first().show();
+
+
+            if(window.matchMedia("(max-width: 767px)").matches)
+            {
+                jQuery('.productdetail_tabs .option-tab').click(function() {
+                    var type = jQuery(this).attr('type');
+                    
+                    if(type == 'recommended')
+                    {
+                        if(jQuery(this).hasClass('active'))
+                        {
+                            jQuery(this).removeClass('active');
+                            jQuery('.product-options-wrapper > .fieldset > .field').first().removeClass('show');
+                        }
+                        else
+                        {
+                            jQuery(this).addClass('active');
+                            jQuery('.product-options-wrapper > .fieldset > .field').first().addClass('show');
+                            jQuery('.product-options-wrapper > .fieldset > .field').last().removeClass('show');
+                            jQuery("[type=upgrade]").removeClass('active');     
+                        }
+                    }
+                    else
+                    {
+                        if(jQuery(this).hasClass('active'))
+                        {
+                            jQuery(this).removeClass('active');
+                            jQuery('.product-options-wrapper > .fieldset > .field').last().removeClass('show');
+                        }
+                        else
+                        {
+                            jQuery(this).addClass('active');
+                            jQuery('.product-options-wrapper > .fieldset > .field').last().addClass('show');
+                            jQuery('.product-options-wrapper > .fieldset > .field').last().addClass('show-upgrade');
+                            jQuery('.product-options-wrapper > .fieldset > .field').css('display','block');
+                            jQuery('.product-options-wrapper > .fieldset > .field').first().removeClass('show');
+                            jQuery("[type=recommended]").removeClass('active'); 
+                        }                   
+                    }
+                });    
+            } 
+            else
+            {
+                jQuery('.productdetail_tabs .option-tab').click(function() {
+                    var type = jQuery(this).attr('type');
+                    jQuery('.productdetail_tabs .option-tab').removeClass('active');
+                    jQuery(this).addClass('active');
+                    jQuery('.product-options-wrapper > .fieldset > .field').hide();
+                    jQuery('.product-options-wrapper > .fieldset > .field').removeClass('show');
+                    if(type == 'recommended'){
+                        jQuery('.product-options-wrapper > .fieldset > .field').first().show();
+                        jQuery('.product-options-wrapper > .fieldset > .field').first().addClass('show');
+
+
+
+                    }else{
+                        jQuery('.product-options-wrapper > .fieldset > .field').addClass('show');
+                        jQuery('.product-options-wrapper > .fieldset > .field').show();
+                        jQuery('.product-options-wrapper > .fieldset > .field').first().hide();
+                        jQuery('.product-options-wrapper > .fieldset > .field').first().removeClass('show');
+                    }
+                });    
+            }
+        });
+});
+</script>
+
+<!--- Onclick Box Url Change --->
+<script type="text/javascript">
+    jQuery("#box_order_first").click(function() { 
+        if(!jQuery(this).hasClass("box_active")) {
+            jQuery(this).addClass("box_active");
+        }
+        jQuery("#box_order_second").removeClass("box_active");
+        jQuery("#box_order_third").removeClass("box_active");
+        
+        newUrl = window.location.protocol + "//" + window.location.hostname + "/checkout?add-to-cart=232&quantity=1";
+
+        jQuery("#order_now_link").attr("href", newUrl);
+    });
+    jQuery("#box_order_second").click(function() { 
+        if(!jQuery(this).hasClass("box_active")) {
+            jQuery(this).addClass("box_active");
+        }
+        jQuery("#box_order_first").removeClass("box_active");
+        jQuery("#box_order_third").removeClass("box_active");
+
+        newUrl = window.location.protocol + "//" + window.location.hostname + "/checkout?add-to-cart=232&quantity=3";
+
+        jQuery("#order_now_link").attr("href", newUrl);
+    });
+    jQuery("#box_order_third").click(function() { 
+        if(!jQuery(this).hasClass("box_active")) { 
+            jQuery(this).addClass("box_active");
+        }
+        jQuery("#box_order_second").removeClass("box_active");
+        jQuery("#box_order_first").removeClass("box_active");
+
+        newUrl = window.location.protocol + "//" + window.location.hostname + "/checkout?add-to-cart=232&quantity=6";
+
+        jQuery("#order_now_link").attr("href", newUrl);
+    });
+</script>
+<!--- Onclick Box Url Change --->
+
+
+
+<script>
+    jQuery(document).ready(function() {
+     jQuery('.care-tab-1').click(function() {
+         setTimeout(function() {
+            window.dispatchEvent(new Event('resize'));
+        }, 100);
+     });
+     jQuery('.care-tab-2').click(function() {
+        setTimeout(function() {
+            window.dispatchEvent(new Event('resize'));
+        }, 100);
+    });
+ });
+</script>
+
+
+<!--- Mobile tab Show --->
+<script type="text/javascript">
+    if(window.matchMedia('(max-width: 767px)').matches)
+    {
+        jQuery(document).ready(function () {
+            jQuery('.care-tab-open-1').hide();
+            jQuery('.care-tab-open-2').hide();
+            jQuery('.care-tab-1').on('click', function() {
+                jQuery('.care-tab-open-1').show();
+                jQuery('.care-tab-open-2').hide();
+            });
+            jQuery('.care-tab-2').on('click', function() {
+                jQuery('.care-tab-open-2').show();
+                jQuery('.care-tab-open-1').hide();  
+            });
+        });
+    }
+</script>
+<!--- Mobile tab Show --->
+
+
+<!--- Timeline --->
+<script type="text/javascript">
+    var items = $(".timeline li");
+    var lineToDraw = $('.draw-line');
+    if(lineToDraw.length) {
+      $(window).on('scroll', function () {
+
+        let greyLineHeight = $('.default-line').height();
+        let windowDistance = $(window).scrollTop();
+        let timelineDistance = $(".timeline").offset().top;
+        let headerHeight = $('.main-header').height();
+        let line = 0;
+
+        if((windowDistance + (2 * headerHeight)) >= timelineDistance) {
+          line = windowDistance - timelineDistance + (2 * headerHeight);
+          
+          if(line <= greyLineHeight) {
+            lineToDraw.css({
+              'height' : line + 'px'
+          });
+        }
+    }
+
+    var bottom = lineToDraw.offset().top + lineToDraw.outerHeight(true);
+    items.each(function(index) {
+      var circlePosition = $(this).offset();
+
+      if(bottom > circlePosition.top) {             
+        $(this).addClass('in-view');
+    } else {
+        $(this).removeClass('in-view');
+    }
+}); 
+});
+
+      
+  }
+
+  $("#button").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#strenth_number").offset().top
+    }, 100);
+});
+
+</script>
+
+
+<!--- Popup Model --->
+<script type="text/javascript">
+    var ebModal = document.getElementById('mySizeChartModal');
+    var ebBtn = document.getElementById("mySizeChart");
+    var ebSpan = document.getElementsByClassName("zip_close")[0];
+    var ebOKBttn = document.getElementsByClassName("zip_button")[0];
+
+    ebBtn.onclick = function() {
+        ebModal.style.display = "block";
+    }
+    ebSpan.onclick = function() {
+        ebModal.style.display = "none";
+    }
+    ebOKBttn.onclick = function() {
+        ebModal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == ebModal) {
+            ebModal.style.display = "none";
+        }
+    }
+</script>
+<div id="mySizeChartModal" class="zip_modal">
+  <div class="zip_modal-content">
+    <span class="zip_close">&times;</span>
+    <input type="text" id="zipcode" name="zipcode" placeholder="Enter Zipcode...">
+    <button class="zip_button">ok</button>
+</div>
+</div>
+<!-- Popup Model -->
+
+<!---- Sticky Content Untill Footer Start--->
+<script type="text/javascript">
+    var pageWidth = $(window).width();
+    jQuery(window).scroll(function () { 
+        if (pageWidth > 1024) {
+           if(jQuery(window).scrollTop() > 200) {
+            jQuery('.desktopcartcontents').css('position','fixed');
+            jQuery('.desktopcartcontents').css('top','0');
+        }
+        else if (jQuery(window).scrollTop() <= 200) {
+            jQuery('.desktopcartcontents').css('position','');
+            jQuery('.desktopcartcontents').css('top','');
+        }     
+        if (jQuery('.desktopcartcontents').offset().top + jQuery(".desktopcartcontents").height() > jQuery(".hide_scroll").offset().top) {
+          jQuery('.desktopcartcontents').css('top',-(jQuery(".desktopcartcontents").offset().top + jQuery(".desktopcartcontents").height() - jQuery(".hide_scroll").offset().top));
+      }
+  }
+});
+</script>
+<!---- Sticky Content Untill Footer Start--->
+
+
+<!---- Owl Carousle Width --->
+<script type="text/javascript">
+  $('.cart-slider').owlCarousel({
+      loop:false,
+      margin:30,
+      nav:true,
+      slideTransition: 'linear',
+      autoplaySpeed: 1500,
+      autoWidth:true,
+      smartSpeed: 1500,
+      responsiveClass:true,
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:1
+          },
+          1000:{
+              items:1
+          },
+          1366:{
+              items:2
+          }
+      }
+  })
+</script>
+<!---- Owl Carousle Width --->
+
+
+<!--- Jquery Button Bottom When Scroll --->
+<script type="text/javascript">
+    var menu = jQuery('#cart_button');
+    function isInViewport(scroll) {
+        var viewportTop = jQuery('.order_sale').offset().top-100;
+        var viewportBottom = viewportTop + jQuery('.order_sale').height();
+        // console.log(scroll+'  --  '+viewportTop);
+        if (scroll > viewportTop) {
+            menu.addClass('scrollorder');
+        } else {
+            menu.removeClass('scrollorder');
+        }
+    }
+
+    jQuery(window).scroll(function () {
+        var scroll = jQuery(window).scrollTop();
+        isInViewport(scroll)
+    });
+</script>
+<!--- Jquery Button Bottom When Scroll --->
+
+
+<!--- Jquery Length Check --->
+<script type="text/javascript">
+    if ( jQuery('.zq-cart-cartcontents--recommended-list li').length > 4 ) {
+       jQuery('.scroll_cart').css("overflow-y", "scroll");
+       jQuery('.scroll_cart').css("height", "100%");
+       jQuery('.scroll_cart').css("max-height", "280px");
+   }
+</script>
+<!--- Jquery Length Check --->
+
+
+<!--- Jquery fix div auto scroll come footer div stop --->
+<script type="text/javascript">
+$(function() {
+    $.fn.scrollBottom = function() {
+        return $(document).height() - this.scrollTop() - this.height();
+    };
+    var $el = $('.desktopcartcontents');
+    var $window = $(window);
+    $window.bind("scroll resize", function() {
+        var gap = $window.height() - $el.height() - 10;
+        var visibleFoot = 467 - $window.scrollBottom();
+        var scrollTop = $window.scrollTop()
+        if(scrollTop < 120 + 10){
+            $el.css({
+                top: (120 - scrollTop) + "px",
+                bottom: "auto"
+            });
+        }else if (visibleFoot > gap) {
+            $el.css({
+                top: "auto",
+                bottom: visibleFoot + "px"
+            });
+        } else {
+            $el.css({
+                top: 0,
+                bottom: "auto"
+            });
+        }
+    });
+});
+</script>
+<!--- Jquery fix div auto scroll come footer div stop --->
+
+
+<!--- Jquery Onclick scroll div --->
+<script type="text/javascript">
+jQuery(function() {
+    jQuery('a[href*=\\#]:not([href=\\#])').on('click', function() {
+        var target = jQuery(this.hash);
+        target = target.length ? target : jQuery('[name=' + this.hash.substr(1) +']');
+        if (target.length) {
+            jQuery('html,body').animate({
+                scrollTop: target.offset().top-121
+            }, 1000);
+            return false;
+        }
+    });
+});
+</script>
+<!--- Jquery Onclick scroll div --->
+
+<!---- Content dot dot css --->
+<style type="text/css">
+    .contentdot {
+        height: 42px;
+        display: block;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+<!---- Content dot dot css --->
+
+< !-- Id wise link data display --->
+<a href="<?php echo "/course-page-iframe/?id=".get_the_id(); ?>">Start Course</a>
+<?php 
+    $id = $_GET['id'];
+    echo get_post_meta($id, 'iframe_code', true);
+?>
+< !-- Id wise link data display --->
